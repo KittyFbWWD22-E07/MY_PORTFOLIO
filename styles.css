@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Circular Std Book, sans-serif';
+    src: url(fonts/FontsFree-Net-Circular-Std-Book.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Circular Std Book, sans-serif';
+    font-size: 1.6rem;
+    background: #10101a;
+    background-size: 400% 400%;
+    display: block;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.nav_bar{
+    display: flex;
+}
+
