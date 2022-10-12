@@ -27,6 +27,7 @@ body {
     display: block;
 }
 
+/* Nav bar Nav bar Nav bar Nav bar Nav bar Nav bar */
 .nav_bar_index,
 .nav_bar {
     position: fixed;
@@ -110,6 +111,8 @@ body {
 
 }
 
+/* Drop menu in Nav bar Drop menu in Nav bar */
+
 .toggle_bar_menu {
     display: flex;
     justify-content: center;
@@ -144,7 +147,6 @@ body {
     font-family: 'Source Code Pro', monospace;
     align-items: center;
     right: 0;
-    /* display: none; */
     list-style: none;
     line-height: 2ch;
     margin-top: 10rem;
@@ -174,13 +176,14 @@ body {
     pointer-events: all;
 }
 
-/* Why when positioned absolute it comes out of the menu div? */
+/* Hero section Hero section Hero section Hero section */
 
 .header_hero {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 3rem;
     line-height: 110%;
     color: #fff;
+    padding-top: 2rem;
 }
 
 .header_hero_gradient {
@@ -260,12 +263,135 @@ body {
 
 }
 
-.menu-top {
+/* Main section Main section Main section Main Section */
+
+.container{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(min-content, 10rem)) 1fr;
+}
+
+.about-text{
+    grid-column: 1/15;
+    padding: 0 4rem;
+    color: #c4c4c4;
+    font-size: 1.2rem;
+
+}
+
+.section-projects{
+    grid-column: 2/15;
+    /* margin-top: 20rem; */
+    padding: 0 6rem;
+    padding-top: 18rem;
+    color: #c4c4c4;
+}
+
+.heading-1{
     display: flex;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.heading-1 span{
+    display: inline-block;
+    padding-right: 0.3rem;
+    background-image: linear-gradient(90deg, #cf59e6, #6bc5f8);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-projects p{
+    margin-top: 2rem;
+    margin-bottom: 15rem;
+    font-size: 1.2rem;
+}
+
+.section-projects
+.project-card{
     width: 80%;
+    margin: 20rem auto;
+    padding: 6rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(180deg, rgba(35,37,49, .5), rgba(15, 15, 24, .5));
+    border: 0.2rem solid #20222e;
+    backdrop-filter: blur(54px);
+    border-radius: 4rem;
+}
+
+.section-projects
+.project-card_left{
+    margin-right: 6rem;
+    color: #c4c4c4;
+}
+
+.section-projects
+.project-card_left h4{
+transform: rotate(180deg);
+writing-mode: tb-rl;
+font-family: 'Encode Sans Condensed', sans-serif;
+font-size: 1rem;
+font-weight: 100;
+color: #8b8b8b;
+line-height: 120%;
+}
+
+.section-projects
+.project-card_middle{
+    width: 25rem;
+    height: 25rem;
+    background-size: cover;
+    background:fixed;
+    border-radius: 5.3rem;
+    overflow: hidden;
+}
+
+.section-projects
+.project-card_right{
+    margin-left: 6rem;
+}
+
+.section-projects
+.project-card_right h2{
+    margin-bottom: 4rem;
+}
+
+.section-projects .project-card:first-of-type a{
+    color: #ff90c3;
+}
+
+.section-projects .project-card_link{
+    /* display: inline-block; */
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 0.8rem;
+    text-decoration: none;
+
+}
+
+.section-projects .project-card_socials{
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    width: 5rem;
+    /* background-color: #8b8b8b; */
+}
+
+.project-card_socials img{
+    background-color: #8b8b8b;
+}
+
+.menu-top {
+   
+    grid-column: 1/15;
+    width: 100%;
+    padding: 0 4rem;
+    /* margin-left: auto;
+    margin-right: auto; */
+    display: flex;
     justify-content: space-between;
-    position: absolute;
-    left: 10%;
     margin-top: 20rem;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #fff;
