@@ -3,7 +3,9 @@
     src: url(fonts/FontsFree-Net-Circular-Std-Book.ttf);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed&family=Source+Code+Pro&display=swap');
+
+
 
 
 * {
@@ -17,9 +19,15 @@ body {
     font-size: 1.6rem;
     background: #10101a;
     background-size: 400% 400%;
-    height: 100vh;
 }
 
+.header {
+    margin-top: 15rem;
+    padding: 0 6rem;
+    display: block;
+}
+
+.nav_bar_index,
 .nav_bar {
     position: fixed;
     top: 5rem;
@@ -29,34 +37,48 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: max-content;
+    min-width: 320px;
     max-width: 50%;
-    height: 5rem;
+    height: 6rem;
     margin-left: auto;
     margin-right: auto;
-    background: rgba(42, 43, 56, .5);
-    border: 0.2rem solid #2a2b37;
-    backdrop-filter: blur(104px);
     border-radius: 2rem;
 }
 
+.nav_bar_index{
+    border: 0.2rem solid rgba(42, 43, 56, 0.5);
+    background: rgba(42, 43, 56);
+    z-index: 2;
+}
+
+.nav_bar{
+    border: 0.2rem solid #2a2b37;
+    background: rgba(42, 43, 56, .5);
+    backdrop-filter: blur(104px);
+}
 .brand_logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     top: 4px;
+    margin: 1rem 0;
 }
 
 
-.brand_logo_text_wrapper {
+.brand_logo_text_wrapper,
+.brand_logo_text_wrapper_index {
     position: absolute;
     overflow: hidden;
     color: #c4c4c4;
     font-size: 0.7rem;
     font-weight: 900;
-    left: 5rem;
+    left: 6rem;
     top: 2.2rem;
+}
+
+.brand_logo_text_wrapper_index{
+    width: 6.5rem;
 }
 
 .brand_logo_title {
@@ -69,6 +91,7 @@ body {
 .brand_logo_text_wrapper 
 .brand_logo_text {
     animation: logoLeftAnim 15s cubic-bezier(1, 0, 0, 1) 0s infinite normal none;
+    
 }
 
 @keyframes logoLeftAnim {
@@ -95,96 +118,69 @@ body {
     gap: 1rem;
     font-family: 'Source Code Pro', monospace;
     position: absolute;
-    right: 1rem;
-    top: 1.4rem;
+    right: 0rem;
+    padding-right: 1rem;
+    top: 1.9rem;
 }
 
-.toggle_bar_menu span {
+.toggle_bar_menu button {
+    color: #c4c4c4;
     font-size: 1.2rem;
     font-weight: 900;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.header {
-    margin-top: 15rem;
-    padding: 0 6rem;
-    position: relative;
+.toggle_bar_menu button:hover,
+.toggle_bar_menu .dropdown:hover,
+.menu-list a:hover{
+    color: #cf59e6;
 }
 
-.menu {
-    margin-top: 10rem;
+.toggle_bar_menu ul {
+    display: flex;
     position: absolute;
-    right: 25%;
     font-family: 'Source Code Pro', monospace;
-    justify-content: right;
-}
-
-.menu-list {
+    align-items: center;
+    right: 0;
+    /* display: none; */
     list-style: none;
-    line-height: 3ch;
-    display: absolute;
+    line-height: 2ch;
+    margin-top: 10rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
 }
 
-.menu a,
+.toggle_bar_menu a,
 .menu-top a {
     text-decoration: none;
 }
 
-.menu li {
+.toggle_bar_menu li {
     background: rgba(42, 43, 56, .5);
     border: 0.2rem solid #2a2b37;
     backdrop-filter: blur(104px);
     border-radius: 2rem;
-    padding: 0 2rem;
+    padding: 0 1rem;
     width: max-content;
-    justify-items: right;
+}
+
+.toggle_bar_menu button:focus 
++.menu-list{
+   
+    opacity: 1;
+    pointer-events: all;
 }
 
 /* Why when positioned absolute it comes out of the menu div? */
-.menu-list .second {
-    position: absolute;
-    right: 0;
-}
-
-.menu-top {
-    display: flex;
-    width: 80%;
-    justify-content: space-between;
-    position: absolute;
-    left: 10%;
-    margin-top: 20rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: #fff;
-    text-align: center;
-}
-
-.menu-top h4 {
-    font-size: 1.2rem;
-}
-
-.go-see-icons {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    padding-top: 2rem;
-    font-size: 3rem;
-}
-
-.menu-top-right h4 {
-    margin-bottom: 2rem;
-}
-
-.menu-top-right a {
-    font-size: 3rem;
-    font-weight: 900;
-    color: #fff;
-}
 
 .header_hero {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 110%;
     color: #fff;
-    position: absolute;
 }
 
 .header_hero_gradient {
@@ -255,12 +251,55 @@ body {
 
 }
 
+.header_hero_projectlink{
+    margin-top: 5rem;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Encode Sans Condensed', sans-serif;
+
+}
+
+.menu-top {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    position: absolute;
+    left: 10%;
+    margin-top: 20rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+.menu-top h4 {
+    font-size: 1.2rem;
+}
+
+.go-see-icons {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    padding-top: 2rem;
+    font-size: 3rem;
+}
+
+.menu-top-right h4 {
+    margin-bottom: 2rem;
+}
+
+.menu-top-right a {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+}
+
 /* About Me Page About Me Page About Me Page*/
 
 .writeup {
     display: grid;
     place-items: center;
-    margin-top: 15rem;
+    margin-top: 20rem;
 }
 
 .profile-pic img {
@@ -272,7 +311,7 @@ body {
     text-align: center;
     color: #c4c4c4;
     font-family: 'Source Code Pro', monospace;
-    max-width: 80%;
+    max-width: 60%;
 }
 
 .text p {
