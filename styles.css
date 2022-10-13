@@ -12,6 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    pointer-events: auto;
 }
 
 body {
@@ -80,7 +81,7 @@ body {
 }
 
 .brand_logo_text_wrapper_index {
-    width: 6.5rem;
+    /* width: 6.5rem; */
 }
 
 .brand_logo_title {
@@ -131,7 +132,6 @@ body {
     color: #8000ff;
 }
 
-
 .toggle_bar_menu button {
 
     font-size: 1.2rem;
@@ -142,12 +142,11 @@ body {
 }
 
 .toggle_bar_menu button:hover,
-.toggle_bar_menu .dropdown:hover,
 .menu-list a:hover {
     color: #cf59e6;
 }
 
-.toggle_bar_menu ul {
+.toggle_bar_menu .menu-list {
     display: flex;
     position: absolute;
     font-family: 'Source Code Pro', monospace;
@@ -175,10 +174,10 @@ body {
     width: max-content;
 }
 
-.toggle_bar_menu button:focus+.menu-list {
+.toggle_bar_menu button:focus+ul {
 
     opacity: 1;
-    pointer-events: all;
+    /* pointer-events: all; */
 }
 
 /* Hero section Hero section Hero section Hero section */
@@ -384,7 +383,7 @@ body {
 }
 
 .section-projects .project-card:first-of-type a {
-    color: #ff90c3;
+    color: #d063c6;
 }
 
 .section-projects .project-card_link {
@@ -416,13 +415,25 @@ body {
     margin-top: 5rem;
     display: flex;
     align-items: center;
-    width: 5rem;
-    background-color: #8b8b8b;
+    width: 30px;
+    height: 40px;
+    /* background-color: #8b8b8b; */
+
 }
 
 .project-card_socials img {
     background-color: #8b8b8b;
+    border-radius: 50%;
 }
+
+.project-card_socials img:hover {
+    background-color: #cf59e6;
+}
+
+/* Interest section Interest section Interest section Interest section */
+
+
+
 
 .menu-top {
 
@@ -459,6 +470,12 @@ body {
     color: #fff;
 }
 
+.menu-top-right a:hover {
+    background-image: linear-gradient(135deg, #cf59e6, #6bc5f8);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /* About Me Page About Me Page About Me Page*/
 
 .writeup {
@@ -486,18 +503,18 @@ body {
 
 /* footer section footer section footer section footer section */
 
-.footer{
+.footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 10rem;
+    margin-top: 20rem;
     padding: 1rem 2em;
     border-top: 1px solid hsla(0, 0%, 75%, .25);
     background: #000;
 }
 
-.logo-wrapper{
+.logo-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -505,7 +522,13 @@ body {
     color: #c4c4c4;
     font-family: 'Source Code Pro', monospace;
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+.footer h6{
+    color: #c4c4c4;
+    font-size: 0.6rem;
+    font-weight: 900;
 }
 
 
